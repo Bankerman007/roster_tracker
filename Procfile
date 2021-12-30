@@ -1,4 +1,4 @@
-web: gunicorn .roster.wsgi
+python roster/manage.py runserver 0.0.0.0:$PORT
 
 
 

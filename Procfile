@@ -1,4 +1,4 @@
-web: gunicorn roster.wgi
+web: gunicorn .roster.wgi
 
 
 

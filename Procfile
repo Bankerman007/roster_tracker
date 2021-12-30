@@ -1,5 +1,5 @@
-web: python roster/manage.py runserver 0.0.0.0:$PORT
+web: gunicorn roster.wgi
 
 
 
-#web: python roster/manage.py runserver 0.0.0.0:$PORT
+

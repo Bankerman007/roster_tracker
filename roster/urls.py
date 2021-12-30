@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('b_ball.urls')),
     path('base/', include('b_ball.urls')),
+    path('register_player/', include('b_ball.urls')),
 ]

@@ -27,7 +27,7 @@ PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-=(j$7eglsj4dq7ifi1b4%=-)ox_8c2!ilqd1noyn^1bx-)7l-4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "b-ball-app.herokuapp.com"]
 
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

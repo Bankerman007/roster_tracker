@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<html>
+
+        <body>
+                <div>
+
+                        
+                        
+                <!-- <div style="padding:10px;">This Weeks Hoopers</div>        -->
+                <table>                        
+                        <tr>
+                                <th style="padding:10px;">This Weeks Hoopers</th>                                 
+                        </tr>
+
+                        <tr>
+                                <td style = "padding:10px;">Players = {{count}}</td>
+                        </tr>
+
+                                {% for p in players %}
+                        <tr>   
+                               
+                                <td style="padding:10px;">{{p.player_name}}</td>
+                        </tr>        
+                                
+                                {% endfor %}                        
+                        
+                </table>
+
+
+
+                </div>
+        </body>
+
+</html>
+        
+{% endblock %}

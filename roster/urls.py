@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('b_ball.urls')),
     path('base/', include('b_ball.urls')),
     path('register_player/', include('b_ball.urls')),
+    path('too_many/', include('b_ball.urls')),
 ]

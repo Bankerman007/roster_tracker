@@ -18,7 +18,11 @@ def base(request):
 
 def register_player(request):
     submitted = False
-    if request.method == "POST":
+    players = Player.objects.all()
+    count = len(players)
+    if count > 15:
+        return HttpResponseRedirect('/too_many')
+    elif request.method == "POST":
         form = PlayerForm(request.POST)
         if form.is_valid():
             form.save()
@@ -32,5 +36,8 @@ def register_player(request):
 def home(request):
     players = Player.objects.all()
     number_of_players = Player.objects.all()
-    count = len(number_of_players) 
+    count = len(number_of_players)
     return render(request, 'home.html', {'players': players,'count':count,})
+
+def too_many(request):
+    return render(request, 'too_many.html', {})

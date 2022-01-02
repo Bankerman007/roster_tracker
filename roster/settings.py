@@ -27,7 +27,7 @@ PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-=(j$7eglsj4dq7ifi1b4%=-)ox_8c2!ilqd1noyn^1bx-)7l-4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1", "b-ball-app.herokuapp.com"]
 
@@ -86,7 +86,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -136,7 +137,6 @@ STATIC_ROOT= os.path.join(PROJECT_ROOT,'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 

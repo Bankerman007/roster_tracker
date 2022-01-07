@@ -16,7 +16,7 @@ def reminder_text():
     pass #sms_reminder()
     #('This job is run every Tuesday at 11am.')
 
-@sched.scheduled_job('cron', day_of_week= 'thu', hour=20.30)
+@sched.scheduled_job('cron', day_of_week= 'fri', hour=01.50)
 def save_to_db():
     save_to_db()
 

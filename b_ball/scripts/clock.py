@@ -1,6 +1,8 @@
 from django.utils import timezone
 from datetime import date, datetime
 
+from b_ball.scripts.save_to_db import start_db_save
+
 
 def full_list_text():
     pass #sms_all()
@@ -16,7 +18,7 @@ def save_to_db():
     #time = datetime.time()
     #run_time = datetime.time(hour= 3, minute = 0, second = 0)
     if day == 4:
-        save_to_db()
+        start_db_save()
     else:
         pass
 

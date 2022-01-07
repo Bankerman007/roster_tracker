@@ -25,8 +25,15 @@ def save_to_db():
 save_to_db()
 
 def reset():
-    pass #delete_players()
+    today = datetime.today()
+    day = today.weekday()
+    if day == 4:
+        delete_players()
+    else:
+        pass
     #('This job is run every Tuesday at 11pm to reset weekly player list.')
+
+reset()
 
 # def run(*args):
 #   date = '2021-10-26'

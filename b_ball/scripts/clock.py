@@ -15,27 +15,34 @@ def reminder_text():
 def save_to_db():
     today = datetime.today()
     day = today.weekday()
-    #time = datetime.time()
-    #run_time = datetime.time(hour= 3, minute = 0, second = 0)
     if day == 3:
         start_db_save()
     else:
         pass
 
-save_to_db()
-
-def reset():
+def reset_players():
     today = datetime.today()
-    day = today.weekday()
-    if day == 4:
-        delete_players()
+    day = today.weekday()    
+    if day==4:
+         print("Scott, this worked!!")
+        #delete_players()
     else:
         pass
+
+reset_players()
+     
+    
+  
+    # if day == 4:
+    #     delete_players()
+    # else:
+    #     pass
     #('This job is run every Tuesday at 11pm to reset weekly player list.')
 
-reset()
+
 
 # def run(*args):
 #   date = '2021-10-26'
 #   EmailSender.send_email(datetime.today())
 
+save_to_db()

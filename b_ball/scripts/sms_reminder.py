@@ -1,6 +1,6 @@
 import os
 from twilio.rest import Client
-from b_ball.save_to_db import save_to_db
+from b_ball.scripts.save_to_db import save_to_db
 
 
 # Find your Account SID and Auth Token at twilio.com/console

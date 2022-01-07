@@ -1,6 +1,6 @@
 import os
 from twilio.rest import Client
-from b_ball.save_to_db import all_cells
+from b_ball.scripts.save_to_db import all_cells
 
 
 

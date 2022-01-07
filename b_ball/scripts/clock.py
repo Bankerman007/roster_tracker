@@ -1,5 +1,4 @@
-from django.utils import timezone
-from datetime import date, datetime
+from datetime import datetime
 from b_ball.scripts.reset_wkly_db import delete_players
 from b_ball.scripts.save_to_db import start_db_save
 

@@ -15,7 +15,7 @@ def save_to_db():
     day = today.weekday()
     #time = datetime.time()
     #run_time = datetime.time(hour= 3, minute = 0, second = 0)
-    if day == 3:
+    if day == 4:
         save_to_db()
     else:
         pass

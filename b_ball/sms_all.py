@@ -1,6 +1,6 @@
 import os
 from twilio.rest import Client
-from b_ball.save_to_db import all_cells
+from b_ball.models import Player_full_text_list
 
 
 
@@ -11,7 +11,16 @@ def sms_all():
     account_sid = 'AC7d0ce7af110c2d84da65e506722c1f2d'
     auth_token = '21d2b9c70be435ee1a1869a1f452e145'
     client = Client(account_sid, auth_token)
-    [apl_value] = all_cells()
+    all_players_cells_dict = Player_full_text_list.objects.values('player_name_full_text','player_cell_full_text')
+    all_players_list = []
+
+    for ele in all_players_cells_dict:
+        for key, value in ele.items():
+            v = value
+            all_players_list.append(v)
+
+    apl = {all_players_list[i]: all_players_list[i + 1] for i in range(0, len(all_players_list), 2)}
+    apl_value = list(apl.values())
     all_players = apl_value
     for p in all_players:
         send_cell = p

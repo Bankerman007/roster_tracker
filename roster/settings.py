@@ -16,8 +16,8 @@ import os.path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-#BASE_DIR = Path(__file__).resolve().parent.parent
-PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
+BASE_DIR = Path(__file__).resolve().parent.parent
+#PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -88,7 +88,8 @@ DATABASES = {
     }
 }
 import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -128,9 +129,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT= os.path.join(PROJECT_ROOT,'static')
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#MEDIA_URL = 'media/'
+STATIC_ROOT= os.path.join(BASE_DIR,'b_ball/static')
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates', 'static', 'staticfiles'))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type

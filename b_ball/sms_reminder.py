@@ -7,8 +7,8 @@ from b_ball.models import Player
 # and set the environment variables. See http://twil.io/secure
 
 def sms_reminder():
-    account_sid = 'TWILIO_ACCOUNT_SID'
-    auth_token = 'TWILIO_AUTH_TOKEN'
+    account_sid = TWILIO_ACCOUNT_SID
+    auth_token = TWILIO_AUTH_TOKEN
     client = Client(account_sid, auth_token)
     this_weeks_players_dict = Player.objects.values('player_name', 'player_cell')
     this_weeks_list = []

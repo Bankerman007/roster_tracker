@@ -8,7 +8,7 @@ from b_ball.models import Player
 
 def sms_reminder():
     account_sid = 'TWILIO_ACCOUNT_SID'
-    auth_token = 'dc6d37d42233ff8aece37a90f536165c'
+    auth_token = 'TWILIO_AUTH_TOKEN'
     client = Client(account_sid, auth_token)
     this_weeks_players_dict = Player.objects.values('player_name', 'player_cell')
     this_weeks_list = []

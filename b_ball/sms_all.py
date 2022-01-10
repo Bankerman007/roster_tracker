@@ -8,8 +8,8 @@ from b_ball.models import Player_full_text_list
 # and set the environment variables. See http://twil.io/secure
 
 def sms_all():
-    account_sid = TWILIO_ACCOUNT_SID
-    auth_token = TWILIO_AUTH_TOKEN
+    account_sid = 'TWILIO_ACCOUNT_SID'
+    auth_token = 'TWILIO_AUTH_TOKEN'
     client = Client(account_sid, auth_token)
     all_players_cells_dict = Player_full_text_list.objects.values('player_name_full_text','player_cell_full_text')
     all_players_list = []

@@ -9,7 +9,7 @@ from b_ball.models import Player_full_text_list
 
 def sms_all():
     account_sid = 'AC7d0ce7af110c2d84da65e506722c1f2d'
-    auth_token = '21d2b9c70be435ee1a1869a1f452e145'
+    auth_token = 'dc6d37d42233ff8aece37a90f536165c'
     client = Client(account_sid, auth_token)
     all_players_cells_dict = Player_full_text_list.objects.values('player_name_full_text','player_cell_full_text')
     all_players_list = []

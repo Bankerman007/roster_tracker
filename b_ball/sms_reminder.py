@@ -8,7 +8,7 @@ from b_ball.models import Player
 
 def sms_reminder():
     account_sid = 'AC7d0ce7af110c2d84da65e506722c1f2d'
-    auth_token = '21d2b9c70be435ee1a1869a1f452e145'
+    auth_token = 'dc6d37d42233ff8aece37a90f536165c'
     client = Client(account_sid, auth_token)
     this_weeks_players_dict = Player.objects.values('player_name', 'player_cell')
     this_weeks_list = []

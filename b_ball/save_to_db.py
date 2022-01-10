@@ -37,7 +37,7 @@ def start_db_save():
     return [twl_value,apl_value]
     
 
-start_db_save()
+
 
 
         

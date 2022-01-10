@@ -1,6 +1,6 @@
 from datetime import datetime
-from b_ball.scripts.reset_wkly_db import delete_players
-from b_ball.scripts.save_to_db import start_db_save
+from b_ball.reset_wkly_db import delete_players
+from b_ball.save_to_db import start_db_save
 
 
 def save_to_db():

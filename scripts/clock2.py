@@ -8,8 +8,8 @@ def run(*args):
     day = today.weekday()
     if day == 0:
         sms_all()  #('This job is run every Monday at 10am.')
-        if day == 1:
-            sms_reminder()  #('This job is run every Tuesday at 10am.')
+    if day == 1:
+        sms_reminder()  #('This job is run every Tuesday at 10am.')
 
     
 

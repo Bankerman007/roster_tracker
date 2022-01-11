@@ -26,7 +26,7 @@ def sms_reminder():
 
         message = client.messages \
                         .create(
-                             body="Reminder- See you at B-Ball Tonight!!",
+                             body="Reminder- See you at B-Ball Tonight!! Starts at 7:35 this week.",
                              from_='+16467989631',
                              to= '+1'+ send_cell,
                     )

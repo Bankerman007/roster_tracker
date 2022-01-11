@@ -33,7 +33,7 @@ def players_needed():
     for elm in apl_value:
         if elm not in this_weeks_list:
             not_on_list.append(elm)
-            print(not_on_list)
+    print(not_on_list)
     
     # for m in not_signed_up:
     #     not_signed_up_list = Player.objects.get(player_cell = m)    

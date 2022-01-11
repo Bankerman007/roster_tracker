@@ -51,3 +51,4 @@ def players_needed():
     
         # print(message.sid)  
         
+players_needed()

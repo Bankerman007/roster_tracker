@@ -31,6 +31,12 @@ def players_needed():
         
 
     not_signed_up = set(apl_value).difference(twl_value)
+    not_on_list= []
+    for elm in apl_value:
+        if elm not in this_weeks_list:
+            not_on_list.append(elm)
+
+    
     for m in not_signed_up:
         not_signed_up_list = Player.objects.get(player_cell = m)    
         

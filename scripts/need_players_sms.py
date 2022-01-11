@@ -28,25 +28,25 @@ def players_needed():
 
     apl = {all_players_list[i]: all_players_list[i + 1] for i in range(0, len(all_players_list), 2)}
     apl_value = list(apl.values())
-        
+    print(apl_value)    
 
     not_signed_up = set(apl_value).difference(twl_value)
     not_on_list= []
     for elm in apl_value:
         if elm not in this_weeks_list:
             not_on_list.append(elm)
-
+            print(not_on_list)
     
-    for m in not_signed_up:
-        not_signed_up_list = Player.objects.get(player_cell = m)    
+    # for m in not_signed_up:
+    #     not_signed_up_list = Player.objects.get(player_cell = m)    
         
-    account_sid = os.environ['TWILIO_ACCOUNT_SID']
-    auth_token = os.environ['TWILIO_AUTH_TOKEN']
-    client = Client(account_sid, auth_token)
+    # account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    # auth_token = os.environ['TWILIO_AUTH_TOKEN']
+    # client = Client(account_sid, auth_token)
         
-    for n in not_signed_up_list:
-        send_cell = n
-        print(send_cell)
+    # for n in not_signed_up_list:
+    #     send_cell = n
+    #     print(send_cell)
 
         # message = client.messages \
         #                 .create(

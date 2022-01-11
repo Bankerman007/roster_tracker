@@ -28,9 +28,7 @@ def players_needed():
 
     apl = {all_players_list[i]: all_players_list[i + 1] for i in range(0, len(all_players_list), 2)}
     apl_value = list(apl.values())
-    print(apl_value)    
-
-    not_signed_up = set(apl_value).difference(twl_value)
+        
     not_on_list= []
     for elm in apl_value:
         if elm not in this_weeks_list:

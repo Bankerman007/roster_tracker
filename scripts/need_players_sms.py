@@ -36,11 +36,11 @@ def players_needed():
             not_on_list.append(elm)
     length = len(twl_value)
     needed = length - 10
-    print(length)
+    
 
     
-    for m in not_on_list:
-        twl_value = Player.objects.get(player_cell = m)    
+    # for m in not_on_list:
+    #     twl_value = Player.objects.get(player_cell = m)    
         
     account_sid = os.environ['TWILIO_ACCOUNT_SID']
     auth_token = os.environ['TWILIO_AUTH_TOKEN']

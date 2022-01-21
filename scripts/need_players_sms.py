@@ -4,7 +4,8 @@ import os
 from twilio.rest import Client
 
 
-
+#this function finds how many additional players are needed and sends text to those
+#who are not already registered.
 def players_needed():
     this_weeks_players_dict = Player.objects.values('player_name', 'player_cell')
     this_weeks_list = []
@@ -34,15 +35,18 @@ def players_needed():
     for elm in apl_value:
         if elm not in this_weeks_list:
             not_on_list.append(elm)
+    
     length = len(twl_value)
-    needed = 10 - length
-    needed = str(needed)
+    if length >= 10:
+        return
+    else:
+        needed = 10 - length
+        needed = str(needed)
     
 
     
-    # for m in not_on_list:
-    #     twl_value = Player.objects.get(player_cell = m)    
-        
+    
+    #sends the texts   
     account_sid = os.environ['TWILIO_ACCOUNT_SID']
     auth_token = os.environ['TWILIO_AUTH_TOKEN']
     client = Client(account_sid, auth_token)

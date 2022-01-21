@@ -35,7 +35,8 @@ def players_needed():
         if elm not in this_weeks_list:
             not_on_list.append(elm)
     length = len(twl_value)
-    needed = length - 10
+    needed = 10 - length
+    needed = str(needed)
     
 
     
@@ -46,13 +47,13 @@ def players_needed():
     auth_token = os.environ['TWILIO_AUTH_TOKEN']
     client = Client(account_sid, auth_token)
         
-    # for n in not_on_list:
-    #     send_cell = n
-    #     print(send_cell)
+    for n in not_on_list:
+        send_cell = n
+        print(send_cell)
 
     message = client.messages \
                         .create(
-                             body="Need at least" + needed + "more players to play this week.",
+                             body="Need at least " + needed + " more players.",
                              from_='+16467989631',
                              to= '+1'+ '8475323886',
                     )

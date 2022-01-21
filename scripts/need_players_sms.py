@@ -30,29 +30,33 @@ def players_needed():
     apl_value = list(apl.values())
         
     not_on_list= []
+    
     for elm in apl_value:
         if elm not in this_weeks_list:
             not_on_list.append(elm)
-    print(not_on_list)
+    length = len(twl_value)
+    needed = length - 10
+    print(length)
+
     
-    # for m in not_signed_up:
-    #     not_signed_up_list = Player.objects.get(player_cell = m)    
+    for m in not_on_list:
+        twl_value = Player.objects.get(player_cell = m)    
         
-    # account_sid = os.environ['TWILIO_ACCOUNT_SID']
-    # auth_token = os.environ['TWILIO_AUTH_TOKEN']
-    # client = Client(account_sid, auth_token)
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+    client = Client(account_sid, auth_token)
         
-    # for n in not_signed_up_list:
+    # for n in not_on_list:
     #     send_cell = n
     #     print(send_cell)
 
-        # message = client.messages \
-        #                 .create(
-        #                      body="Ballers Needed! Register for ball this weeek: b-ball-app.herokuapp.com/register_player/",
-        #                      from_='+16467989631',
-        #                      to= '+1'+ send_cell,
-        #             )
+    message = client.messages \
+                        .create(
+                             body="Need at least" + needed + "more players to play this week.",
+                             from_='+16467989631',
+                             to= '+1'+ '8475323886',
+                    )
     
-        # print(message.sid)  
+    print(message.sid)  
         
 players_needed()

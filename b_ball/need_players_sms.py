@@ -53,15 +53,14 @@ def players_needed():
         
     for n in not_on_list:
         send_cell = n
-        print(send_cell)
+        
 
     message = client.messages \
                         .create(
                              body="Need at least " + needed + " more players.",
                              from_='+16467989631',
-                             to= '+1'+ '8475323886',
+                             to= '+1'+ send_cell ,
                     )
     
     print(message.sid)  
         
-players_needed()

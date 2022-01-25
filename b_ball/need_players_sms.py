@@ -1,5 +1,5 @@
-from models import Player
-from models import Player_full_text_list
+from .models import Player
+from .models import Player_full_text_list
 import os
 from twilio.rest import Client
 

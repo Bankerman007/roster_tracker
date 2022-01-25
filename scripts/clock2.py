@@ -13,7 +13,7 @@ def run(*args):
     if day == 0 and current_hour >= 1055 and current_hour <= 1110:
         sms_all()  #This job is run every Monday at 11am.
     
-    if day == 1 and current_hour >= 1055 and current_hour <= 1110:
+    if day == 1 and current_hour >= 1255 and current_hour <= 1230:
         players_needed() #This job is run every Tuesday at 11am.
     
     if day == 1 and current_hour >= 1355 and current_hour <= 1410:

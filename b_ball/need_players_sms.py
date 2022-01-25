@@ -1,5 +1,5 @@
-from b_ball. models import Player
-from b_ball.models import Player_full_text_list
+from models import Player
+from models import Player_full_text_list
 import os
 from twilio.rest import Client
 
@@ -44,7 +44,7 @@ def players_needed():
         needed = str(needed)
     
 
-    
+    print(not_on_list)
     
     #sends the texts   
     account_sid = os.environ['TWILIO_ACCOUNT_SID']

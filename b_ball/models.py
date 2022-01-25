@@ -4,7 +4,7 @@ from django.db import models
 class Player(models.Model):
     player_name = models.CharField(max_length=30)
     player_email = models.CharField(max_length=30)
-    player_cell = models.CharField(max_length=30)
+    player_cell = models.CharField(max_length=30, default= "no spaces or dashes")
     
     def __str__(self):
         return self.player_name

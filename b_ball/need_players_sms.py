@@ -55,12 +55,12 @@ def players_needed():
         send_cell = n
         
 
-    message = client.messages \
+        message = client.messages \
                         .create(
                              body="Need at least " + needed + " more players.",
                              from_='+16467989631',
                              to= '+1'+ send_cell ,
                     )
     
-    print(message.sid)  
+        print(message.sid)  
         

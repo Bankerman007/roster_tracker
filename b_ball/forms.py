@@ -10,3 +10,11 @@ class PlayerForm(ModelForm):
         player_name = forms.CharField()
         player_email = forms.CharField()
         player_cell = forms.CharField()
+
+class EditPlayerForm(ModelForm):
+    class Meta:
+        model = Player
+        fields = ['player_name', 'player_cell',]
+        player_name = forms.CharField()
+        player_name = forms.CharField()
+        

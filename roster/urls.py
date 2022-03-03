@@ -22,4 +22,6 @@ urlpatterns = [
     path('base/', include('b_ball.urls')),
     path('register_player/', include('b_ball.urls')),
     path('too_many/', include('b_ball.urls')),
+    path('edit_roster/', include('b_ball.urls')),
+    path('delete/', include('b_ball.urls')),
 ]

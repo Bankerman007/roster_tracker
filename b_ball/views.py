@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 # from django.shortcuts import redirect, render
@@ -12,9 +12,14 @@ def base(request):
     return render(request, 'base.html',{})
 
 
-# def delete_players(request):
-#         players = Player.objects.all()
-#         return render(request,'delete_players.html',{'players':players})
+def edit_roster(request):
+         players = Player.objects.all()
+         return render(request,'edit_roster.html',{'players':players})
+
+def delete(request,id):   
+        player = Player.objects.get(pk=id)
+        player.delete()
+        return redirect('/')
 
 def register_player(request):
     submitted = False

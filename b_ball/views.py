@@ -25,7 +25,7 @@ def register_player(request):
     submitted = False
     players = Player.objects.all()
     count = len(players)
-    if count > 15:
+    if count == 15:
         return HttpResponseRedirect('/too_many')
     elif request.method == "POST":
         form = PlayerForm(request.POST)

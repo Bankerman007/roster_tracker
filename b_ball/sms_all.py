@@ -27,7 +27,7 @@ def sms_all():
 
         message = client.messages \
                         .create(
-                             body= "Basketball cancelled for tonight",
+                             body= "Basketball cancelled for tonight.",
                              from_='+16467989631',
                              to= '+1'+ send_cell,
                     )

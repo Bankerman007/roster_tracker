@@ -27,7 +27,7 @@ def sms_all():
 
         message = client.messages \
                         .create(
-                             body= "Basketball cancelled for tonight",
+                             body= "Register for Tuesday ball, first 15 players get in. http://b-ball-app.herokuapp.com/",
                              from_='+16467989631',
                              to= '+1'+ send_cell,
                     )

@@ -10,10 +10,10 @@ def run(*args):
     now = datetime.now()
     current_hour = int(now.strftime("%H%M"))
     
-    if day == 0 and current_hour >= 1055 and current_hour <= 1120:
+    if day == 0 and current_hour >= 1055 and current_hour <= 1105:
         sms_all()  #This job is run every Monday at 11am.
     
-    if day == 1 and current_hour >= 1155 and current_hour <= 1205:
+    if day == 1 and current_hour >= 1055 and current_hour <= 1105:
         players_needed() #This job is run every Tuesday at 11am.
     
     if day == 1 and current_hour >= 1355 and current_hour <= 1410:

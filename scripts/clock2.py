@@ -11,7 +11,7 @@ def run(*args):
     now = datetime.now()
     current_hour = int(now.strftime("%H%M"))
     
-    if day == 0 and current_hour >= 1055 and current_hour <= 1105:
+    if day == 0 and current_hour >= 1055 and current_hour <= 1205:
         sms_all()  #This job is run every Monday at 11am.
 
     if day == 0 and current_hour >= 1755 and current_hour <= 1805:

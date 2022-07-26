@@ -20,7 +20,5 @@ def run(*args):
     if day == 1 and current_hour >= 1055 and current_hour <= 1105:
         players_needed() #This job is run every Tuesday at 11am.
     
-    if day == 1 and current_hour >= 1355 and current_hour <= 1410:
+    if day == 1 and current_hour >= 1110 and current_hour <= 1120:
         sms_reminder()  #This job is run every Tuesday at 2pm.
-    
-

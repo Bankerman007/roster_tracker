@@ -26,7 +26,7 @@ def sms_reminder():
 
         message = client.messages \
                         .create(
-                             body="Reminder- See you at B-Ball Tonight!! Starts at 6pm, 500 N Randall West Dundee. Please send payment prior to attending through Zelle or Apple Pay.",
+                             body="B-Ball cancelled for tonight 7/26.",
                              from_='+16467989631',
                              to= '+1'+ send_cell,
                     )

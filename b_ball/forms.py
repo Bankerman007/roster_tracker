@@ -17,4 +17,13 @@ class EditPlayerForm(ModelForm):
         fields = ['player_name', 'player_cell',]
         player_name = forms.CharField()
         player_name = forms.CharField()
+
+class TextRegisteredPlayers(forms.Form):
+    message = forms.CharField()
+    
+
+class TextAllPlayers(forms.Form):
+    message = forms.CharField()
+    
+        
         

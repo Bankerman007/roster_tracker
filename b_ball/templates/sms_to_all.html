@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<Div>
+<h2> Send to players on full list</h2>
+
+    {% if submitted %}
+    
+
+    {% else %}
+
+        <form action= "" method ='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type= "submit" value= "Submit" name = "message2">
+
+        </form> 
+
+    {% endif %}
+
+</Div> 
+
+<HEAD>
+
+    <SCRIPT language="JavaScript">
+    
+    <!--hide
+       
+    var password;
+    
+    var pass1="1776";
+        
+    password=prompt('Please enter your password to view this page!',' ');
+        
+    if (password==pass1)
+    
+      alert('Password Correct! Click OK to enter!');
+    
+    else
+    
+       {
+    
+        window.location="http://127.0.0.1:8000/unlock/";
+    
+        }
+    
+    
+    
+    //-->
+    
+    </SCRIPT>
+    
+    </HEAD>
+        
+{% endblock %}

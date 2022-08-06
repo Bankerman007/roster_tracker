@@ -1,12 +1,8 @@
 from django.shortcuts import render,redirect
-
-# Create your views here.
-# from django.shortcuts import redirect, render
-from .forms import PlayerForm
+from b_ball.sms_updates import sms_to_regist, sms_to_full_list
+from .forms import PlayerForm, TextRegisteredPlayers, TextAllPlayers
 from django.http import HttpResponseRedirect
 from .models import Player
-
-
 
 def base(request):
     return render(request, 'base.html',{})
@@ -46,3 +42,39 @@ def home(request):
 
 def too_many(request):
     return render(request, 'too_many.html', {})
+
+def sms_to_all(request):
+    submitted = False
+    if request.method == "POST":
+        form = TextAllPlayers(request.POST)
+        if form.is_valid():
+            form = form.cleaned_data['message']
+            sms_to_full_list(form)
+                
+            return HttpResponseRedirect('/')
+    else:
+        form = TextRegisteredPlayers
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'sms_to_all.html', {'form': form, 'submitted': submitted})
+
+def sms_to_registered(request):
+    submitted = False        
+    if request.method == "POST":
+        form = TextRegisteredPlayers(request.POST)
+        if form.is_valid():
+            form = form.cleaned_data['message']
+            sms_to_regist(form)
+                    
+            return HttpResponseRedirect('/')
+    else:
+        form = TextRegisteredPlayers
+        if 'submitted' in request.GET:
+            submitted = True
+    
+    return render(request, 'sms_to_registered.html', {'form': form, 'submitted': submitted})
+
+def send_texts(request):
+    return render(request, 'send_texts.html', {})
+

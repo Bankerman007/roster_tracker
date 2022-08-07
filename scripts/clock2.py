@@ -11,9 +11,10 @@ def run(*args):
     day = today.weekday()
     now = datetime.now()
     current_hour = int(now.strftime("%H%M"))
-    test = TurnOff.objects.all()
+    flag = TurnOff.objects.all(pk=2)
+    test = flag.on_off
     
-    if test == False:
+    if test == True:
 
         if day == 6:
             sms_reminder()

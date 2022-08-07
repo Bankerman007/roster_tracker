@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from b_ball.sms_updates import sms_to_regist, sms_to_full_list
-from .forms import PlayerForm, TextRegisteredPlayers, TextAllPlayers
+from .forms import PlayerForm, TextRegisteredPlayers, TextAllPlayers, TurnOff
 from django.http import HttpResponseRedirect
 from .models import Player
 
@@ -78,3 +78,22 @@ def sms_to_registered(request):
 def send_texts(request):
     return render(request, 'send_texts.html', {})
 
+def on_off(request):
+           
+    toggle = TurnOff.objects.all()
+    
+    return render(request, 'on_off.html', {'toggle': toggle})
+
+def change_status(request,id):   
+    flag = TurnOff.objects.get(pk=id)
+    flag.on_off = 'True'
+    flag.save()        
+            
+    return redirect('/on_off')
+
+def turn_status_off(request, id):
+    flag = TurnOff.objects.get(pk=id)
+    flag.on_off = 'False'
+    flag.save()        
+            
+    return redirect('/on_off')

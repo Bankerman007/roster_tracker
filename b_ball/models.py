@@ -17,7 +17,8 @@ class Player_full_text_list(models.Model):
         return self.player_name_full_text
 
 class TurnOff(models.Model):
+    flag = models.CharField(max_length=10, default = False)
     on_off = models.BooleanField(default=False)
 
-    def __bool__(self):
-        return self.on_off
+    def __str__(self):
+        return self.flag

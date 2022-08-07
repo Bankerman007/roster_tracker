@@ -5,11 +5,12 @@ from b_ball.models import TurnOff
 
 
 def run(*args):
-    test = TurnOff.objects.all()
+    flag = TurnOff.objects.all(pk=2)
+    test = flag.on_off
     today = datetime.today()
     day = today.weekday()
     
-    if test == False:
+    if test == True:
         if day == 1:
             start_db_save()  #('This job runs every Tuesday night at 11pm')
         if day == 2:

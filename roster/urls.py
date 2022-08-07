@@ -27,5 +27,8 @@ urlpatterns = [
     path('send_texts/', include('b_ball.urls')),
     path('sms_to_all/', include('b_ball.urls')),
     path('sms_to_registered/', include('b_ball.urls')),
+    path('on_off/', include('b_ball.urls')),
+    path('change_status/', include('b_ball.urls')),
+    path('turn_status_off/', include('b_ball.urls')),
 
 ]

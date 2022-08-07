@@ -24,11 +24,12 @@ class TextRegisteredPlayers(forms.Form):
 class TextAllPlayers(forms.Form):
     message = forms.CharField()
 
-# class TurnOnOff(ModelForm):
-#     class Meta:
-#         model = TurnOff
-#         fields= ['on_off',]
-#         on_off = forms.BooleanField()
+class TurnOnOff(ModelForm):
+    class Meta:
+        model = TurnOff
+        fields= ['flag','on_off',]
+        flag = forms.CharField()
+        on_off = forms.BooleanField()
     
         
         

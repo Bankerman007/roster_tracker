@@ -28,7 +28,7 @@ class TurnOnOff(ModelForm):
     class Meta:
         model = TurnOff
         fields= ['on_off',]
-        on_off = forms.BooleanField(default = False)
+        on_off = forms.BooleanField()
     
         
         

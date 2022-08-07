@@ -3,7 +3,7 @@
 #from save_to_db import save_to_db
 
 # Create your tests here.
-# from models import TurnOff
+# from .models import TurnOff
 
 
 # test = TurnOff.objects.all()

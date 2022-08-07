@@ -1,5 +1,4 @@
 from django.urls import path
-from b_ball import sms_to_full_list, sms_updates
 from . import views
 
 

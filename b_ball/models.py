@@ -19,5 +19,5 @@ class Player_full_text_list(models.Model):
 class TurnOff(models.Model):
     on_off = models.BooleanField(default=False)
 
-    def __str__(self):
+    def __bool__(self):
         return self.on_off

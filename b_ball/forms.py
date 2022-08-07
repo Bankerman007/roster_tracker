@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Player
+from .models import Player, TurnOff
 
 
 class PlayerForm(ModelForm):
@@ -21,9 +21,14 @@ class EditPlayerForm(ModelForm):
 class TextRegisteredPlayers(forms.Form):
     message = forms.CharField()
     
-
 class TextAllPlayers(forms.Form):
     message = forms.CharField()
+
+class TurnOnOff(ModelForm):
+    class Meta:
+        model = TurnOff
+        fields= ['on_off',]
+        on_off = forms.BooleanField()
     
         
         

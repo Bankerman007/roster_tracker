@@ -11,7 +11,7 @@ def run(*args):
     day = today.weekday()
     now = datetime.now()
     current_hour = int(now.strftime("%H%M"))
-    flag = TurnOff.objects.get(pk=2)
+    flag = TurnOff.objects.get(pk=1)
     should_run = flag.on_off
     
     if should_run:

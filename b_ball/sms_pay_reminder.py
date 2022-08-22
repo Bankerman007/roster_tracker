@@ -26,7 +26,7 @@ def sms_pay_reminder():
 
         message = client.messages \
                         .create(
-                             body="Reminder- now that your registered please send payment to secure your spot: Zelle to minmikeg@aol.com or Apple Pay.",
+                             body="Reminder- Mike paid for the gym up front so please bring cash with you to b-ball",
                              from_='+16467989631',
                              to= '+1'+ send_cell,
                     )

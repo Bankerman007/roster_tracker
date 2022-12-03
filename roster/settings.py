@@ -89,7 +89,7 @@ DATABASES = {
     'USER':'nsszpmpp',
     'PASSWORD':'FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt', 
     'HOST':'peanut.db.elephantsql.com',
-    'PORT': 5432
+    'PORT': ""
     }
 }
 # DATABASES = {

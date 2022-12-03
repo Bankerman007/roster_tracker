@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-=(j$7eglsj4dq7ifi1b4%=-)ox_8c2!ilqd1noyn^1bx-)7l-4
 DEBUG = os.environ['DEBUG']
 #DEBUG = False  
 
-ALLOWED_HOSTS = ["127.0.0.1", "b-ball-app.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "b-ball-app.herokuapp.com","bball.justdev.us"]
 
 
 # Application definition
@@ -84,10 +84,20 @@ WSGI_APPLICATION = 'roster.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'bball',
+    'USER':'nsszpmpp',
+    'PASSWORD':'FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt', 
+    'HOSTS':'postgres://nsszpmpp:FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt@peanut.db.elephantsql.com/nsszpmpp',
+    'PORT': 5432
     }
 }
+#  {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+   
+
+# }
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)

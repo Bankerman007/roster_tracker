@@ -88,7 +88,7 @@ DATABASES = {
     'NAME': 'bball',
     'USER':'nsszpmpp',
     'PASSWORD':'FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt', 
-    'HOSTS':'postgres://nsszpmpp:FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt@peanut.db.elephantsql.com/nsszpmpp',
+    'HOST':'postgres://nsszpmpp:FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt@peanut.db.elephantsql.com/nsszpmpp',
     'PORT': 5432
     }
 }

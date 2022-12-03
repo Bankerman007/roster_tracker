@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'roster.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2'',
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'NAME': 'bball',
     'USER':'nsszpmpp',
     'PASSWORD':'FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt', 

@@ -88,7 +88,7 @@ DATABASES = {
     'NAME': 'bball',
     'USER':'nsszpmpp',
     'PASSWORD':'FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt', 
-    'HOST':'db.elephantsql.com/nsszpmpp',
+    'HOST':'db.elephantsql.com',
     'PORT': 5432
     }
 }

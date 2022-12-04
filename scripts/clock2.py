@@ -16,12 +16,9 @@ def run(*args):
     
     if should_run:
         print('should run is true, excuting script')
-    
+        sms_reminder()
         if day == 0 and current_hour >= 1055 and current_hour <= 1105:
             sms_all()  #This job is run every Monday at 11am.
-
-        if day == 6 and current_hour >= 1355 and current_hour <= 1405:
-            sms_reminder()  #This job is run every Monday at 11am.
 
         # if day == 0 and current_hour >= 1755 and current_hour <= 1805:
         #     sms_pay_reminder()  #This job is run every Monday at 6pm.    

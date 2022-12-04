@@ -37,10 +37,10 @@ def players_needed():
             not_on_list.append(elm)
     
     length = len(twl_value)
-    if length >= 10:
+    if length >= 15:
         return
     else:
-        needed = 10 - length
+        needed = 15 - length
         needed = str(needed)
     
 
@@ -57,7 +57,7 @@ def players_needed():
 
         message = client.messages \
                         .create(
-                             body="Need at least " + needed + " more players.",
+                             body=needed + " spots open http://bball.justdev.us/.",
                              from_='+16467989631',
                              to= '+1'+ send_cell ,
                     )

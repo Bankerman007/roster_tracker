@@ -26,7 +26,7 @@ def sms_reminder():
 
         message = client.messages \
                         .create(
-                             body="See you at B-Ball Tonight!! Starts at 6pm, 500 N Randall West Dundee. Bring cash for the gym rental.  Mike will collect",
+                             body="See you at B-Ball Tonight!! Starts at 6:15pm, 500 N Randall West Dundee. Please Zelle Mike or bring cash.",
                              from_='+16467989631',
                              to= '+1'+ send_cell,
                     )

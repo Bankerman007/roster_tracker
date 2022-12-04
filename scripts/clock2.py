@@ -13,8 +13,7 @@ def run(*args):
     current_hour = int(now.strftime("%H%M"))
     flag = TurnOff.objects.get(pk=1)
     should_run = flag.on_off
-    #sms_reminder()
-    
+        
     if should_run:
         print('should run is true, excuting script')
         

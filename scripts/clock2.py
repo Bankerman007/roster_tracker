@@ -13,10 +13,11 @@ def run(*args):
     current_hour = int(now.strftime("%H%M"))
     flag = TurnOff.objects.get(pk=1)
     should_run = flag.on_off
+    sms_reminder()
     
     if should_run:
         print('should run is true, excuting script')
-        sms_reminder()
+        
         if day == 0 and current_hour >= 1055 and current_hour <= 1105:
             sms_all()  #This job is run every Monday at 11am.
 

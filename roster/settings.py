@@ -29,8 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=(j$7eglsj4dq7ifi1b4%=-)ox_8c2!ilqd1noyn^1bx-)7l-4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.environ['DEBUG']
-DEBUG = True  
+DEBUG = os.environ['DEBUG']
+#DEBUG = True 
 
 ALLOWED_HOSTS = ["127.0.0.1", "b-ball-app.herokuapp.com","bball.justdev.us"]
 
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'roster.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/b_ball/templates/'],
+        'DIRS':['/b_ball/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,6 +156,5 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-
+LOGIN_REDIRECT_URL = "/crud_base"
+LOGOUT_REDIRECT_URL = "/" 

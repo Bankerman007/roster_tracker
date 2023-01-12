@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Player, TurnOff
+from .models import Player, TurnOff, Player_full_text_list
 
 
 class PlayerForm(ModelForm):
@@ -14,9 +14,17 @@ class PlayerForm(ModelForm):
 class EditPlayerForm(ModelForm):
     class Meta:
         model = Player
-        fields = ['player_name', 'player_cell',]
+        fields = ['player_name','player_cell']
         player_name = forms.CharField()
-        player_name = forms.CharField()
+        player_cell = forms.CharField()
+
+class AllPlayersForm(ModelForm):
+    class Meta:
+        model = Player_full_text_list
+        fields = ['player_name_full_text','player_cell_full_text']
+        player_name_full_text = forms.CharField()
+        player_cell_full_text = forms.CharField()
+        
 
 class TextRegisteredPlayers(forms.Form):
     message = forms.CharField()

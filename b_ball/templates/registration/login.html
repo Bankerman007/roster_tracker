@@ -1,11 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+<title>BBall CRUD</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -233,52 +232,36 @@ $(document).ready(function(){
 });
 </script>
 </head>
+
 <body>
-
-<div class="container min-vh-100"> 
-<div class="container-sm">
-	<div class="table-responsive">
-		<div class="table-wrapper">
-			<div class="table-title">
-				<div class="row">
-					<div class="col-sm-6">
-						<h2>Turn Automated Texts ON/Off</h2>
-					</div>
-
-				</div>
-			</div>
-			<table class="table table-striped table-hover table-responsive-sm">
-				<thead>
-					<tr>
-						
-						
-					</tr>
-				</thead>
-				<tbody>
-                    {% for p in toggle %}                    
-                        <tr>
-                        
-                            <td style="padding:10px;">{{p.flag}}</td>
-                            <td style="padding:10px;">{{p.on_off}}</td>
-                            <td style="padding:10px;">{{p.id}}</td>
-                            <td style="padding:10px;"><button type="button"><a href= "/change_status/{{p.id}}">On</a></button></td>
-                            <td style="padding:10px;"><button type="button"><a href= "/turn_status_off/{{p.id}}">Off</a></button></td>
-                        
-                        </tr>
-                    {% endfor %}
-                </thead>
-            
-                
-              				
-                
-				</tbody>
-			</table>
-			
-		</div>
-	</div>        
-</div>
-</div>
+	<div class="container min-vh-100"> 
+        <div class="container-sm">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>Log In To Manage Roster</h2>
+                            </div>
+                            <div class="col-sm-6">
+                            </div>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        
+                                            <form method="post">
+                                              {% csrf_token %}
+                                              {{ form.as_p }}
+                                              <button type="submit">Log In</button>
+                                            </form>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
 </body>
-   
 </html>
-

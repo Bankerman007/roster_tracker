@@ -3,10 +3,12 @@ from b_ball.sms_updates import sms_to_regist, sms_to_full_list
 from .forms import PlayerForm, TextRegisteredPlayers, TextAllPlayers, TurnOff, EditPlayerForm, AllPlayersForm
 from django.http import HttpResponseRedirect
 from .models import Player, Player_full_text_list
+from django.contrib.auth.decorators import login_required
 
 def base(request):
     return render(request, 'base.html',{})
 
+@login_required
 def crud_base(request):
     players = Player.objects.all()
     all_players = Player_full_text_list.objects.all()
@@ -19,6 +21,7 @@ def home(request):
     count = len(players)
     return render (request,'home.html',{'players': players, 'count': count,})
 
+@login_required
 def edit_roster(request,id):
     player = Player.objects.get(pk=id)
     form= EditPlayerForm(request.POST or None, instance = player)
@@ -31,6 +34,7 @@ def edit_roster(request,id):
         form = EditPlayerForm(instance=person)
         return render(request,'edit_roster.html',{'form': form,})
 
+@login_required
 def edit_full_roster(request,id):
     player = Player_full_text_list.objects.get(pk=id)
     form= AllPlayersForm(request.POST or None, instance = player)
@@ -43,11 +47,13 @@ def edit_full_roster(request,id):
         form = AllPlayersForm(instance=person)
         return render(request,'edit_full_roster.html',{'form': form,})
 
+@login_required
 def delete(request,id):   
     player = Player.objects.get(pk=id)
     player.delete()
     return redirect('/crud_base')
 
+@login_required
 def delete_full_list(request,id):
     player = Player_full_text_list.objects.get(pk=id)
     player.delete()
@@ -77,6 +83,7 @@ def register_player(request):
             submitted = True
     return render(request, 'register_player.html', {'form': form, 'submitted': submitted})
 
+@login_required
 def register_full_list(request):
     submitted = False
     if request.method == "POST":
@@ -99,6 +106,7 @@ def register_full_list(request):
 def too_many(request):
     return render(request, 'too_many.html', {})
 
+@login_required
 def sms_to_all(request):
     submitted = False
     if request.method == "POST":
@@ -115,6 +123,7 @@ def sms_to_all(request):
 
     return render(request, 'sms_to_all.html', {'form': form, 'submitted': submitted})
 
+@login_required
 def sms_to_registered(request):
     submitted = False        
     if request.method == "POST":
@@ -131,14 +140,17 @@ def sms_to_registered(request):
     
     return render(request, 'sms_to_registered.html', {'form': form, 'submitted': submitted})
 
+@login_required
 def send_texts(request):
     return render(request, 'send_texts.html', {})
 
+@login_required
 def on_off(request):
     toggle = TurnOff.objects.all()
     
     return render(request, 'on_off.html', {'toggle': toggle})
 
+@login_required
 def change_status(request,id):   
     flag = TurnOff.objects.get(pk=id)
     flag.on_off = 'True'
@@ -146,6 +158,7 @@ def change_status(request,id):
             
     return redirect('/crud_base')
 
+@login_required
 def turn_status_off(request, id):
     flag = TurnOff.objects.get(pk=id)
     flag.on_off = 'False'

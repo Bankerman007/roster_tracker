@@ -1,7 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style>
@@ -9,6 +11,7 @@
   body {
       height: 100%;
   }
+
 </style>
 <body>
    
@@ -29,7 +32,7 @@
           </li>
         </ul>
       </div>
-        <div class = "content w-100 h-100">
+      <div class = "content w-100 h-100">
           
     </div>
     <div class="h-100 w-100">
@@ -41,22 +44,23 @@
           <a>Randall Oaks Rec Center 500 N Randall Road, West Dundee</a><br>
           <a>Cost is $8, please bring cash or Zelle Mike at 815-529-0041</a><br><br>
           
-          <img class="card-img-left w-100" image src= '{% static "bball.jpg" %}' alt="image"></p>
+          <img class="card-img-left w-100" image src= '{% static "bball.jpg" %}' alt="image"><a></a></p>
           <ul class="list-group list-group-flush">
-          {% if submitted %}
-      
-              {% else %}
-      
-                  <form action= "" method ='POST'>
-                      {% csrf_token %}
-                      {{ form.as_p }}
-                      <input type= "submit" value= "Submit">
-      
-                  </form> 
-      
-              {% endif %}
-                </ul>
-    </div>
+            {% if submitted %}
+        
+            {% else %}
+        
+                    <form action= "" method ='POST'>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type= "submit" value= "Submit">
+                    </form> 
+        
+            {% endif %}
+          </ul>
+        <br><br><br><br>
+
+     </div>
   </div> 
     
       

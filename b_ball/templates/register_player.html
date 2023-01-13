@@ -6,52 +6,52 @@
 </head>
 
 <body>
-  <div class="container min-vh-100">
-    <div class="container-sm"> 
-      <div class="card text-center">
-        
-          <div class="card-header">
-          
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" href="/">Players</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/register_player">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="/login/login">Admin</a>
-              </li>
-            </ul>
-          </div>
-          <div class = "content">
-            
-        </div>
-          <div class="card-body">
-            
-            <h5 class="card-title">Mike's B-Ball List</h5>
-            <p class="card-text">        
-              
-              <a> Tuesday Night's 6:15-8:00</a><br>
-              <a>Randall Oaks Rec Center 500 N Randall Road, West Dundee</a><br>
-              <a>Cost is $8, please bring cash or Zelle Mike at 815-529-0041</a><br><br>
-              
-              <img class="card-img-left" image src= '{% static "bball.jpg" %}' alt="image">
-              <a> {% if submitted %}
-          
-                  {% else %}
-          
-                      <form action= "" method ='POST'>
-                          {% csrf_token %}
-                          {{ form.as_p }}
-                          <input type= "submit" value= "Submit">
-          
-                      </form> 
-          
-                  {% endif %} </a></p>
+  <div class="vh-100">
     
-      </div> 
-    </div>
+    <div class="card text-center">
+      
+        <div class="card-header">
+        
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Players</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register_player">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="/login/login">Admin</a>
+            </li>
+          </ul>
+        </div>
+        <div class = "content">
+          
+      </div>
+        <div class="card-body">
+          
+          <h5 class="card-title">Mike's B-Ball List</h5>
+          <p class="card-text">        
+            
+            <a> Tuesday Night's 6:15-8:00</a><br>
+            <a>Randall Oaks Rec Center 500 N Randall Road, West Dundee</a><br>
+            <a>Cost is $8, please bring cash or Zelle Mike at 815-529-0041</a><br><br>
+            
+            <img class="card-img-left" image src= '{% static "bball.jpg" %}' alt="image">
+            <a> {% if submitted %}
+        
+                {% else %}
+        
+                    <form action= "" method ='POST'>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type= "submit" value= "Submit">
+        
+                    </form> 
+        
+                {% endif %} </a></p>
+  
+    </div> 
+    
   </div>    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

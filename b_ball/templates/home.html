@@ -6,50 +6,48 @@
 </head>
 <body>
 
-  <div class="container min-vh-100">  
-    <div class="container-sm">
-      <div class="card text-center">
+  <div class="vh-100">  
+    <div class="card text-center">
       
-        <div class="card-header">
+      <div class="card-header">
+      
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Players</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register_player/">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/login/login">Admin</a>
+          </li>
+        </ul>
+      </div>
+      <div class = "content">
         
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="/">Players</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register_player/">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="/login/login">Admin</a>
-            </li>
+    </div>
+    <div>
+      <div class="card-body">
+        <h5 class="card-title">Mike's B-Ball List</h5>
+        <p class="card-text">        
+          
+          <a> Tuesday Night's 6:15-8:00</a><br>
+          <a>Randall Oaks Rec Center 500 N Randall Road, West Dundee</a><br>
+          <a>Cost is $8, please bring cash or Zelle Mike at 815-529-0041</a><br><br>
+          
+          <img class="card-img-left" image src= '{% static "bball.jpg" %}' alt="image">
+          <a>Hoopers= {{count}}</a></p>
+          <ul class="list-group list-group-flush">
+            {% for p in players %}
+            <li class="list-group-item">{{p.player_name}}</li>
+                
+            {% endfor %} 
           </ul>
-        </div>
-        <div class = "content">
-          
-      </div>
-        <div class="card-body">
-          
-          <h5 class="card-title">Mike's B-Ball List</h5>
-          <p class="card-text">        
-            
-            <a> Tuesday Night's 6:15-8:00</a><br>
-            <a>Randall Oaks Rec Center 500 N Randall Road, West Dundee</a><br>
-            <a>Cost is $8, please bring cash or Zelle Mike at 815-529-0041</a><br><br>
-            
-            <img class="card-img-left" image src= '{% static "bball.jpg" %}' alt="image">
-            <a>Hoopers= {{count}}</a></p>
-            <ul class="list-group list-group-flush">
-              {% for p in players %}
-              <li class="list-group-item">{{p.player_name}}</li>
-                  
-              {% endfor %} 
-            </ul>
-          <br>
-                  
-      </div>
-        <a href="register_player/" class="btn btn-dark">Register</a>
-      
-      </div>
+        <br>
+      </div>            
+    </div>
+    <div>
+      <a href="register_player/" class="btn btn-dark">Register</a>
     </div>  
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

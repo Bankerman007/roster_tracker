@@ -100,7 +100,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
         }
 }
-DATABASES['default'] = dj_database_url.parse('postgres://nsszpmpp:FPIg65p6hGj5Vg4oOYK-avmhndsWQyNt@peanut.db.elephantsql.com/nsszpmpp')
+DATABASES['default'] = os.environ['POSTGRES_ROSTER']
 
 
 # import dj_database_url
